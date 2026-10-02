@@ -305,6 +305,42 @@
     text-shadow:0 1px 0 #fff;
   }
   @media (max-width:860px){.cases5{grid-template-columns:1fr 1fr}.case-grid,.case-grid.wide{grid-template-columns:1fr}}
+
+  /* ===== night: slides en dark theme (Decisions API) ===== */
+  body{transition:background-color 450ms var(--ease-out)}
+  body.night{background:#0a0f1e}
+  .slide.dark{
+    --bg:#0a0f1e;--white:#0c1224;--card:#121a30;
+    --ink:#eef1f8;--ink2:#c3cadb;--muted:#8d98ae;--faint:#68738c;
+    --line:#232e48;--line2:#1b253c;--blue:#93a0ff;--sky:#1c2550;--amber-ink:#fbb03b;
+    --shadow:0 1px 1px rgba(0,0,0,.3),0 24px 48px -28px rgba(0,0,0,.85);
+    background:radial-gradient(120% 95% at 88% 105%,#141d44 0%,#0b1124 52%,#090d1b 100%);color:var(--ink);
+  }
+  .slide.dark>.tex{opacity:.2}
+  .dark mark{box-shadow:inset 0 -.38em 0 rgba(251,176,59,.3)}
+  .dark .label,.dark .chip,.dark .panel .idx,.dark table.cmp thead th span,.dark .vpanel .top{
+    background:linear-gradient(180deg,#1e2843 0%,#141c31 100%);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.11),inset 0 2px 1px rgba(255,255,255,.03),inset 0 -2px 1px rgba(0,0,0,.35),0 1px 0 rgba(255,255,255,.04),0 -1px 0 rgba(0,0,0,.4);
+    text-shadow:0 -1px 0 rgba(0,0,0,.55);color:var(--ink2);
+  }
+  .dark .label .n{text-shadow:0 1px 0 rgba(255,255,255,.4);border-color:rgba(0,0,0,.3)}
+  .dark table.cmp thead th.jev span,.dark .vpanel.j .top{background:linear-gradient(180deg,#4a3713 0%,#33250c 100%);border-color:rgba(251,176,59,.28);color:#fdd28a}
+  .dark table.cmp thead th.oai span{color:#c4cbff;background:linear-gradient(180deg,#26306a 0%,#1a2150 100%);border-color:rgba(147,160,255,.25)}
+  .dark table.cmp thead th span{padding:.25em .7em;border-radius:999px;font-family:var(--mono);text-transform:lowercase;letter-spacing:-.04em;font-weight:500}
+  .dark table.cmp td.oai{color:var(--blue);font-weight:600}
+  .dark .vpanel.o .top{color:#c4cbff}
+  .dark .vpanel.o .top .d{background:var(--blue);box-shadow:0 0 0 3px rgba(147,160,255,.15)}
+  .dark .vpanel .v.b{color:var(--blue)}
+  .dark .vpanel hr{border:0;border-top:1px dashed var(--line);margin:1.2vh 0}
+  .dark .t-lab{fill:#8d98ae} .dark .t-val{fill:#eef1f8} .dark .t-mut{fill:#68738c} .dark .t-head{fill:#eef1f8}
+  .dark .t-blue{fill:#93a0ff} .dark .t-amb{fill:#fbb03b}
+  .dark .t-halo{stroke:#0b1124}
+  .dark .kv .k{color:var(--blue);white-space:nowrap}
+  /* SVG dentro de un fragment: anima cuando el fragment aparece, no al entrar al slide */
+  .frag:not(.shown) .g-bar{transform:scaleX(0)!important;transition:none!important}
+  .frag:not(.shown) .g-fade,.frag:not(.shown) .g-pop{opacity:0!important;transition:none!important}
+  .frag:not(.shown) .g-draw{stroke-dashoffset:1!important;transition:none!important}
 </style>
 </head>
 <body>
@@ -324,6 +360,9 @@
     <mask id="mFadeL" maskContentUnits="objectBoundingBox"><rect width="1" height="1" fill="url(#gL)"/></mask>
     <mask id="mFadeTL" maskContentUnits="objectBoundingBox"><rect width="1" height="1" fill="url(#gTL)"/></mask>
     <linearGradient id="gBlue" x1="0" x2="1"><stop offset="0" stop-color="#3d52d5"/><stop offset="1" stop-color="#7384e6"/></linearGradient>
+    <pattern id="dSky" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="2" height="2" fill="#93a0ff"/><rect x="2" y="2" width="2" height="2" fill="#93a0ff"/></pattern>
+    <pattern id="dSkySoft" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="2" height="2" fill="#93a0ff"/></pattern>
+    <linearGradient id="gSky" x1="0" x2="1"><stop offset="0" stop-color="#4c5fe0"/><stop offset="1" stop-color="#93a0ff"/></linearGradient>
   </defs>
 </svg>
 
@@ -971,9 +1010,91 @@ open source, byok, repo abajo <a>@typesafeai</a></div>
     </div>
   </section>
 
-  <!-- 18 · RESUMEN -->
+  <!-- 18 · DECISIONS API (dark) -->
+  <section class="slide dark" data-tex="tl" data-tint="night">
+    <div class="label"><span class="n">17</span>la respuesta de openai</div>
+    <div class="two l">
+      <div class="stack">
+        <h2 style="font-size:clamp(1.9rem,4.4vw,3.7rem);max-width:17ch">Catorce días después, OpenAI lanzó <em>Decisions API</em>.</h2>
+        <p class="lead">La misma idea que Jev: una pregunta, una <strong>lista cerrada de respuestas</strong> y un contexto. Devuelve una de esas respuestas, no un párrafo.</p>
+        <svg class="chart" viewBox="0 0 560 128" style="max-height:19vh;margin-top:1vh">
+          <line class="g-draw" pathLength="1" style="--gd:500ms;--gt:900ms" x1="24" y1="58" x2="536" y2="58" stroke="#2b3756" stroke-width="1.5"/>
+          <g class="g-bar" style="--gd:900ms;--gt:1500ms"><rect x="40" y="86" width="400" height="9" rx="2" fill="url(#gSky)" opacity=".55"/><rect x="400" y="86" width="120" height="9" fill="url(#dSky)" mask="url(#mFadeR)"/></g>
+          <text x="280" y="120" text-anchor="middle" class="t-lab g-fade" style="--gd:1700ms;font-size:12.5px" data-count data-from="0" data-to="14" data-dec="0" data-suffix=" días entre una y otra" data-delay="1000" data-dur="1400">14 días entre una y otra</text>
+          <g class="g-pop" style="--gd:700ms"><circle cx="40" cy="58" r="7" fill="#fbb03b" stroke="#0b1124" stroke-width="3"/></g>
+          <text x="40" y="34" class="t-amb g-fade" style="--gd:800ms;font-size:13px">jev · early access</text>
+          <text x="40" y="16" class="t-mut g-fade" style="--gd:800ms">15·09</text>
+          <g class="g-pop" style="--gd:1050ms"><circle cx="451" cy="58" r="6" fill="#fbb03b" stroke="#0b1124" stroke-width="3"/></g>
+          <text x="440" y="34" text-anchor="end" class="t-amb g-fade" style="--gd:1150ms;font-size:13px">jev · abierto</text>
+          <text x="440" y="16" text-anchor="end" class="t-mut g-fade" style="--gd:1150ms">27·09</text>
+          <g class="g-pop" style="--gd:1400ms"><circle cx="520" cy="58" r="7" fill="#93a0ff" stroke="#0b1124" stroke-width="3"/></g>
+          <circle class="g-ring" style="--gd:1700ms" cx="520" cy="58" r="12" fill="none" stroke="#93a0ff" stroke-width="2"/>
+          <text x="536" y="34" text-anchor="end" class="t-blue g-fade" style="--gd:1500ms;font-size:13px">devday</text>
+          <text x="536" y="16" text-anchor="end" class="t-mut g-fade" style="--gd:1500ms">29·09</text>
+        </svg>
+      </div>
+      <div class="stack">
+        <div class="vpanel o">
+          <div class="top"><span class="d"></span>post /v1/decisions · preview limitada</div>
+          <div class="body">
+            <div class="q">“¿A qué cola va este ticket?”</div>
+            <div class="row"><span class="k">answers</span><span class="v b">billing · shipping · technical · other</span></div>
+            <div class="row"><span class="k">context</span><span class="v b">texto o imagen</span></div>
+            <hr>
+            <div class="row"><span class="k">answer</span><span class="v">"billing"</span></div>
+            <div class="row"><span class="k">score</span><span class="v">0.97</span></div>
+            <div class="note">Ilustrativo: OpenAI aún no publica la referencia del endpoint.</div>
+          </div>
+        </div>
+        <div class="kv"><span class="k" data-count data-from="1600" data-to="150" data-dec="0" data-prefix="~" data-suffix=" ms" data-delay="900" data-dur="1600">~150 ms</span><span class="muted">vs 1.6 s de una llamada normal a GPT-6 Luna, el modelo que corre debajo.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 19 · JEV VS DECISIONS API (dark, fragment) -->
+  <section class="slide dark" data-tex="br" data-tint="night">
+    <div class="label"><span class="n">18</span>jev vs decisions api</div>
+    <h2 style="max-width:24ch;font-size:clamp(1.8rem,3.9vw,3.2rem);margin-bottom:2.6vh">Misma promesa, <em>distinta letra chica</em>.</h2>
+    <div class="two l" style="align-items:start">
+      <div class="cmpwrap">
+        <table class="cmp">
+          <thead><tr><th style="width:22%">Dimensión</th><th class="jev" style="width:39%"><span>jev</span></th><th class="oai" style="width:39%"><span>decisions api</span></th></tr></thead>
+          <tbody>
+            <tr><td>Estado</td><td class="jev">Abierto a todos</td><td class="oai">Preview limitada</td></tr>
+            <tr><td>Motor</td><td class="jev">Modelo System One propio</td><td class="oai">GPT-6 Luna, un LLM</td></tr>
+            <tr><td>Input</td><td class="jev">Texto</td><td class="oai">Texto o imagen</td></tr>
+            <tr><td>Output</td><td class="jev">Choice, Score, Noul con probabilidad</td><td class="oai">Una respuesta de tu lista y un score</td></tr>
+            <tr><td>Latencia</td><td class="jev">70 a 500 ms</td><td class="oai">~150 ms (claim)</td></tr>
+            <tr><td>Precio</td><td class="jev">$0.042 / MTok, output gratis</td><td class="oai">Sin publicar</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="stack frag">
+        <div class="panel" style="padding:2.4vh 1.6vw 1.6vh">
+          <svg class="chart" viewBox="0 0 440 150">
+            <text x="0" y="14" class="t-lab">si declara 99% de confianza, acierta…</text>
+            <text x="0" y="56" class="t-amb" style="font-size:14px">jev</text>
+            <rect x="64" y="40" width="330" height="22" rx="5" fill="#ffffff" opacity=".05"/>
+            <g class="g-bar" style="--gd:250ms;--gt:1100ms"><rect x="64" y="40" width="326" height="22" rx="5" fill="#fbb03b"/></g>
+            <text x="440" y="56" text-anchor="end" class="t-val g-fade" style="--gd:1100ms">98.9%</text>
+            <text x="0" y="106" class="t-blue" style="font-size:14px">luna</text>
+            <rect x="64" y="90" width="330" height="22" rx="5" fill="#ffffff" opacity=".05"/>
+            <g class="g-bar" style="--gd:500ms;--gt:1100ms"><rect x="64" y="90" width="190" height="22" rx="5" fill="url(#gSky)"/><rect x="214" y="90" width="38" height="22" fill="url(#dSky)" mask="url(#mFadeR)"/></g>
+            <text x="440" y="106" text-anchor="end" class="t-val g-fade" style="--gd:1400ms">68%</text>
+            <line class="g-fade" style="--gd:1600ms" x1="391" y1="30" x2="391" y2="122" stroke="#68738c" stroke-width="1.2" stroke-dasharray="3 4"/>
+            <text x="391" y="140" text-anchor="middle" class="t-mut g-fade" style="--gd:1700ms">ideal</text>
+          </svg>
+        </div>
+        <p class="lead" style="font-size:clamp(1rem,1.7vw,1.4rem)">La velocidad se copió en dos semanas. <mark>La calibración, no.</mark></p>
+        <p class="lead muted" style="font-size:clamp(.92rem,1.35vw,1.12rem)">Sin una confianza confiable no hay umbral sobre el que construir reglas.</p>
+      </div>
+    </div>
+    <div class="src">Test de calibración: Anthus, independiente, sobre GPT-6 Luna (no sobre el endpoint). Fuentes: OpenAI DevDay · The New Stack · eesel AI · OrcaRouter. Consultadas el 02·10·2026.</div>
+  </section>
+
+  <!-- 20 · RESUMEN -->
   <section class="slide bg-white" data-tex="br">
-    <div class="label"><span class="n">17</span>Resumen</div>
+    <div class="label"><span class="n">19</span>Resumen</div>
     <h2 style="max-width:30ch;font-size:clamp(1.9rem,4.4vw,3.6rem)">Jev cambia <em>conversación</em> por <mark>decisión tipada, calibrada, unas 100× más rápida y barata</mark>.</h2>
     <p class="lead" style="max-width:54ch">Brillante para clasificar, rutear y puntuar a escala. Inútil para escribir o razonar. Un modelo nuevo, no un LLM mejor.</p>
     <div style="margin-top:3.4vh">
@@ -1013,7 +1134,7 @@ open source, byok, repo abajo <a>@typesafeai</a></div>
   const thr = (x, y) => (B8[y & 7][x & 7] + .5) / 64;
 
   /* ---------- dithered background textures ---------- */
-  const TINTS = { blue: [61, 82, 213], amber: [214, 138, 20] };
+  const TINTS = { blue: [61, 82, 213], amber: [214, 138, 20], night: [120, 138, 255] };
   const texCache = {};
   function makeTex(corner, tint) {
     const key = corner + tint + innerWidth + 'x' + innerHeight;
@@ -1160,7 +1281,7 @@ open source, byok, repo abajo <a>@typesafeai</a></div>
   document.querySelectorAll('canvas.orb').forEach(cv => orbs.set(cv, cv.dataset.kind === 'star' ? new Star(cv) : new Orb(cv)));
 
   /* ---------- reveal indices ---------- */
-  const RV = '.label, .hero .ch, h2, .lead, .panel, .vpanel, .vpanel.j .row, .kv, ul.clean > li, table.cmp thead tr, table.cmp tbody tr, .chip, .placeholder, .imgph, .big-num, .cap, .meta, .src, .vchip, svg.chart, .dstrip, .xcard, .xvideo, .cmini';
+  const RV = '.label, .hero .ch, h2, .lead, .panel, .vpanel, .vpanel.j .row, .vpanel.o .row, .vpanel.o .q, .vpanel.o .note, .kv, ul.clean > li, table.cmp thead tr, table.cmp tbody tr, .chip, .placeholder, .imgph, .big-num, .cap, .meta, .src, .vchip, svg.chart, .dstrip, .xcard, .xvideo, .cmini';
   slides.forEach(s => {
     let k = 0;
     s.querySelectorAll(RV).forEach(e => {
@@ -1251,12 +1372,13 @@ open source, byok, repo abajo <a>@typesafeai</a></div>
     clearTimeout(old._t);
     old._t = setTimeout(() => { if (!old.classList.contains('active')) old.classList.remove('in'); }, 450);
     i = n; enter(slides[i], dir);
+    document.body.classList.toggle('night', slides[i].classList.contains('dark'));
     bar.style.width = (i / (slides.length - 1) * 100) + '%';
     hint.classList.toggle('hide', i !== 0);
   }
   function next() {
     const s = slides[i], fr = frags(s);
-    if (f < fr.length) { fr[f].classList.add('shown'); s.dataset.f = ++f; return; }
+    if (f < fr.length) { fr[f].classList.add('shown'); fr[f].querySelectorAll('[data-count]').forEach(el => count(el, run)); s.dataset.f = ++f; return; }
     show(i + 1, 1);
   }
   function prev() {

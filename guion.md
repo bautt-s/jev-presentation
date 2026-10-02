@@ -1,22 +1,11 @@
 # Guion: Charla "Jev" · Equipo Dev Sheriff
 
-> **Cómo usar este guion:** cada slide ya se sostiene solo (el público puede leerlo sin ti).
-> Lo de abajo es lo que **tú sumas** hablando: contexto, énfasis, anécdotas y transiciones.
-> No leas la pantalla en voz alta: amplíala.
->
-> **Navegación:** `→ / espacio / Enter` avanza · `←` retrocede · **`F`** pantalla completa · **`R`** repite la animación del slide actual · clic o toque (derecha avanza, izquierda retrocede).
->
-> **Ojo:** en los slides de casos (18 a 22) el primer `→` muestra la traducción. El slide 13 (Alucinaciones) tiene **2 revelaciones**: las dos primeras veces que presionas `→` aparecen el matiz y la conclusión; recién la tercera pasa al slide siguiente.
-> **Duración estimada:** 15–20 min + preguntas. Los `⏱` son un ritmo sugerido.
-
----
-
 ## 01 · Portada: "Jev" ⏱ 0:30
 **En pantalla:** título Jev + "el modelo que no escribe ni una palabra".
 
 **Qué decir:**
-- Arranca con el gancho: *"Esto salió hace unos días y me voló la cabeza. Es un modelo de IA que, a propósito, no escribe texto. Ni una palabra. Y cuando entiendan por qué, van a querer usarlo."*
-- Pon la expectativa: *"En 15 minutos les cuento qué es, cómo funciona, cuánto cuesta, y, lo más importante, cuándo conviene usarlo en Sheriff y cuándo no."*
+- Arranca con el gancho: *"Esto salió hace unos días y me voló la cabeza. Es un modelo de IA que NO escribe texto. Ni una palabra. Y una vez que se entiende el motivo, te hace querer usarlo."*
+- Pon la expectativa: *"A lo largo de los próximos minutos les voy a contar qué es, cómo funciona, cuánto cuesta, y, lo más importante, cuándo conviene usarlo y cuándo no."*
 
 ---
 
@@ -35,7 +24,7 @@
 
 **Qué decir:**
 - Da credibilidad: *"Esto no es un experimento de fin de semana. El CEO, Diogo Almeida, estuvo ~4 años en OpenAI trabajando en las tripas de InstructGPT, ChatGPT y GPT-4."*
-- El insight fundacional: *"Su observación fue: la IA ya chatea mejor que un humano, pero la **automatización de verdad** sigue rota. Estuvieron ~2 años en stealth resolviendo eso."*
+- El insight fundacional: *"Su observación fue: la IA ya chatea mejor que un humano, pero la **automatización de verdad** sigue rota. Estuvieron alrededor de 2 años en silencio resolviendo eso."*
 - Señala que hay respaldo fuerte ($40M seed, DCVC, ~$200M valuación) → *"el mercado se lo está tomando en serio."*
 
 ---
@@ -46,7 +35,7 @@
 **Animación:** el texto del LLM se escribe palabra por palabra mientras los valores de Jev ya aparecieron. Deja que termine: el contraste lo explica solo.
 
 **Qué decir:**
-- Contrasta los dos "terminales" en vivo: *"Miren la diferencia. A la izquierda, el LLM te da una frase amable que igual tienes que interpretar. A la derecha, Jev te da la variable ya lista: equipo = billing, con 94% de probabilidad y 88% de confianza."*
+- Contrasta los dos "terminales" en vivo: *"Miren la diferencia. A la izquierda, el LLM te da una frase amable que igual tenés que interpretar. A la derecha, Jev te da la variable ya lista: equipo = billing, con 94% de probabilidad y 88% de confianza."*
 - Idea ancla: *"Jev no produce algo para que **lo leas tú**; produce algo para que **lo consuma tu código**."*
 
 ---
@@ -55,7 +44,7 @@
 **En pantalla:** dos círculos, Jev en System 1.
 
 **Qué decir:**
-- Explica la metáfora si alguien no leyó a Kahneman: *"System 1 es cuando ves 2+2 y sabes que es 4 sin pensarlo. System 2 es cuando resuelves 17×24: te toma esfuerzo."*
+- Explica la metáfora si alguien no leyó a Kahneman: *"System 1 es cuando ves 2+2 y sabes que es 4 sin pensarlo. System 2 es cuando resuelves 38×41: te toma esfuerzo."*
 - Remátalo: *"Los LLMs viven en el System 2: deliberan, razonan, gastan. Jev es puro System 1: el reflejo. Por eso es su categoría propia, 'System One Model'."*
 
 ---
@@ -97,7 +86,7 @@
 
 **Qué decir:**
 - Explica el gráfico: *"El eje X es la confianza que declara; el Y, cuánto acierta de verdad. Lo ideal es la diagonal: si dice 0.9, acierta 9 de 10."*
-- El contraste: *"Los LLMs son fanfarrones: te dicen 0.95 y aciertan 0.7. Jev está pegado a la diagonal. Eso te deja **usar la confianza como umbral de decisión**: algo que con un LLM no puedes hacer con seguridad."*
+- El contraste: *"Los LLMs son fanfarrones/complacientes: te dicen 0.95 y aciertan 0.7. Jev está pegado a la diagonal. Eso te deja **usar la confianza como umbral de decisión**: algo que con un LLM no puedes hacer con seguridad."*
 
 ---
 
@@ -114,8 +103,8 @@
 **En pantalla:** barra sliver (Jev) vs barra larga (LLM), 193.6× / 444.6×.
 
 **Qué decir:**
-- Da el "para qué": *"¿Por qué me importa 100 ms? Porque a esa velocidad puedes meter IA **dentro de un loop en tiempo real**: un feed, una UI, mientras el usuario tipea, sin que note la espera. Eso antes no era posible con IA."*
-- Aviso de rigor: *"Los benchmarks son de ellos, corridos en sus condiciones. Tómenlos como orden de magnitud, no como evangelio."*
+- Da el "para qué": *"¿Por qué me importa 100 ms? Porque a esa velocidad podés meter IA **dentro de un loop en tiempo real**: un feed, una UI, mientras el usuario tipea, sin que note la espera. Eso antes no era posible con IA."*
+- Aviso de rigor: *"Los benchmarks son de ellos, corridos en sus condiciones, y deben ser tomados como orden de magnitud"*
 
 ---
 
@@ -137,8 +126,8 @@
 
 **Qué decir:**
 - Presenta el claim y luego el bisturí: *"Dicen que alucinar es matemáticamente imposible. Y a nivel de **formato** es verdad: no puede devolver algo fuera de tu schema."*
-- El matiz que te hace ver crítico (no fan): *"PERO, y esto es lo que quiero que se lleven, type-safe garantiza que la respuesta tenga **forma válida**, no que sea **correcta**. Un 'billing' equivocado de tu lista permitida sigue siendo un error. Solo que ahora es un error bien tipado."*
-- Cierra con la salida práctica: *"Por eso la confianza calibrada es la red: pones un umbral y lo que caiga por debajo lo escalas a un humano o a un LLM."*
+- El matiz que te hace ver crítico (no fan): *"PERO, y esto es lo que quiero que se lleven, type-safe garantiza que la respuesta tenga **forma válida**, no que sea **correcta**. Un 'billing' equivocado de tu lista permitida sigue siendo un error. Pero al menos ahora, es un error bien tipado."*
+- Cierra con la salida práctica: *"Por eso la confianza calibrada es la red: ponés un umbral y lo que caiga por debajo lo escalás a un humano o a un LLM."*
 
 ---
 
@@ -147,7 +136,7 @@
 
 **Qué decir:**
 - Enmarca el patrón común: *"Todos estos casos comparten una cosa: son **reglas de decisión difusas**, donde escribir if/else a mano sería frágil, pero no necesitas que la IA te explique nada."*
-- Menciona el uso de **guardrail** como el más subestimado: *"Este me parece el más interesante para nosotros: usar Jev de portero barato para filtrar o verificar lo que produce un LLM."*
+- Menciona el uso de **guardrail** como el más subestimado: *"Este me parece el más interesante para nosotros: usar Jev como portero barato para filtrar o verificar lo que produce un LLM."*
 
 ---
 
@@ -156,7 +145,7 @@
 
 **Qué decir:**
 - Sé tajante (esto genera confianza): *"Igual de importante es saber cuándo NO. Si necesitas que escriba, razone, compare fechas o mantenga una conversación: Jev no es la herramienta. Punto."*
-- La anécdota del bot de trading: *"Alguien lo puso a operar cripto y no rindió. Moraleja: **rápido no es lo mismo que acertado**. Jev decide veloz, pero la calidad de la decisión depende del problema."*
+- La anécdota del bot de trading: *"Al instante salieron muchos proyectos en el cual usaban Jev para operar en el mercado y no rindió. Moraleja: **rápido no es lo mismo que acertado**. Jev decide veloz, pero la calidad de la decisión depende del problema."*
 
 ---
 
@@ -164,7 +153,7 @@
 **En pantalla:** árbol "¿quién consume la salida?" → humano=LLM / software=Jev.
 
 **Qué decir:**
-- Regálales el criterio para llevarse: *"Si se llevan una sola cosa, que sea esta pregunta: **¿la salida la lee un humano, o la consume otro pedazo de software?** Humano → LLM. Software → Jev."*
+- Regálales el criterio para llevarse: *"Si se llevan una sola cosa, que sea esta pregunta: **¿la salida la lee un humano, o la consume otra pieza de software?** Humano → LLM. Software → Jev."*
 - Desactiva el falso dilema: *"No es Jev **vs** LLM. Es Jev **y** LLM. Jev es el nervio reflejo; el LLM, la corteza que delibera. Se complementan."*
 
 ---
@@ -173,7 +162,7 @@
 **En pantalla:** 5 tarjetas con los casos, cada una con su número clave.
 
 **Qué decir:**
-- *"Todo lo que les conté es teoría. Esto es lo que la gente construyó con Jev en su primera semana de vida."*
+- *"Todo lo que les conté es teoría. Pero ahora les voy a mostrar lo que la gente construyó con Jev en sus primeros días de vida."*
 - No expliques cada tarjeta aquí: es el mapa. Di que vas a pasar por los cinco.
 
 ---
@@ -190,7 +179,7 @@
 ## 19 · Caso 2/5 · @johnyeo_, router para agentes ⏱ 20:30
 **Qué decir:**
 - El patrón más reutilizable: **Jev delante de un agente como router**. Antes de que el agente lento piense, Jev elige skill, herramienta y parámetros.
-- Resultado: agente 2 veces más rápido. Jev no reemplaza al LLM, le ahorra la parte de decidir (vuelve a la regla del slide 16).
+- Resultado: agente 2 veces más rápido. Jev no reemplaza al LLM, le ahorra la parte de decidir 
 
 ---
 
@@ -219,7 +208,31 @@
 
 ---
 
-## 23 · Resumen (TL;DR) ⏱ 20:00
+## 23 · OpenAI responde: Decisions API ⏱ 23:30 **(cambio a dark)**
+**En pantalla:** fondo oscuro, línea de tiempo 15·09 → 29·09, el request/response del endpoint y ~150 ms.
+
+**Animación:** la línea de tiempo se dibuja y el contador baja de 1600 a ~150 ms. El dark marca que salimos de Jev y entramos a la competencia.
+
+**Qué decir:**
+- El giro: *"Y esto es lo que me terminó de convencer de que Jev no es una moda. Dos semanas después, en el DevDay del 29 de septiembre, OpenAI sacó su propia versión: **Decisions API**."*
+- Qué es: *"Una pregunta, una lista cerrada de respuestas y un contexto, texto o imagen. Te devuelve una de esas respuestas. La idea de Jev."*
+- Velocidad: *"OpenAI dice unos 150 ms, contra 1.6 s de una llamada normal a GPT-6 Luna, el modelo que corre debajo."*
+- La lectura: *"Cuando OpenAI copia una categoría en dos semanas, la categoría es real."*
+
+---
+
+## 24 · Jev vs Decisions API ⏱ 24:30
+**En pantalla:** tabla de 6 filas (estado, motor, input, output, latencia, precio). **Primer `→`**: aparece el gráfico de calibración (Jev 98.9% vs Luna 68%) y la frase de cierre.
+
+**Qué decir:**
+- Sé justo con OpenAI, suma credibilidad: *"Tiene cosas a favor: acepta imágenes, cosa que Jev no, y viene con todo el ecosistema de OpenAI detrás."*
+- La letra chica: *"Pero hoy es preview limitada, no tiene precio publicado ni documentación del endpoint. Y lo más importante: no es un modelo nuevo, es un LLM, Luna, con una API encima."*
+- `→` y el remate: *"Un test independiente de Anthus midió esto: cuando Luna dice estar 99% segura, acierta 68%. Jev, 98.9%. La velocidad se copió en dos semanas. La calibración, no."*
+- Conecta con el slide 09: *"Y sin una confianza en la que se pueda confiar, no puedes poner umbrales. Vuelves a tratar cada respuesta como sospechosa."*
+
+---
+
+## 25 · Resumen (TL;DR) ⏱ 25:15
 **En pantalla:** la frase resumen + chips.
 
 **Qué decir:**
@@ -227,7 +240,7 @@
 
 ---
 
-## 24 · Gracias ⏱
+## 26 · Gracias ⏱
 **Qué decir:**
 - *"Gracias. Abro preguntas, y si quieren pasamos a ver los casos de Sheriff en detalle."*
 
@@ -237,4 +250,8 @@
 - **Fuentes:** TypeSafe AI (blog oficial), Wikipedia "Jev (AI model)", Requesty, MindStudio, LangChain, Towards Data Science. Consultadas 24·09·2026.
 - **Sesgo de benchmarks:** los números de velocidad/costo son de TypeSafe, corridos en sus condiciones (laptops en la costa oeste, comparando contra competidores). Preséntalos como órdenes de magnitud.
 - **Dato honesto a mano:** 64K de contexto y la distinción "type-safe ≠ correcto" son los dos límites que te blindan de sonar como vendedor.
-- **Si preguntan por disponibilidad:** early access limitado desde el 15·09·2026.
+- **Si preguntan por disponibilidad:** early access limitado desde el 15·09·2026, abierto a todos desde el 27·09·2026.
+- **Decisions API (OpenAI):** anunciada en DevDay el 29·09·2026, corre sobre GPT-6 Luna, preview limitada. Endpoint `POST /v1/decisions`; con API keys normales hoy responde 403. Fuentes: OpenAI DevDay recap, The New Stack, eesel AI, OrcaRouter, Hugging Face blog, Anthus. Consultadas 02·10·2026.
+- **Precio de Decisions API:** la mayoría de las fuentes dice que **no está publicado**; algún blog repite el $0.042 de Jev, pero no lo confirma OpenAI. Si preguntan: "sin precio oficial todavía".
+- **¿Devuelve confianza?** Hay un score según la prensa, pero OpenAI no documenta que sea calibrado. Por eso en el slide dice "un score" y el request/response está marcado como ilustrativo.
+- **Test de Anthus:** midió GPT-6 Luna (el modelo base), no el endpoint de Decisions API. A 99% de confianza declarada, Luna acertó 68% y Jev 98.9%; error de calibración 0.32 vs 0.03–0.04. Es un tercero, no OpenAI ni TypeSafe: preséntalo así.
